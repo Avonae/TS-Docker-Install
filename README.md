@@ -25,9 +25,9 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 
 Установка займет минут 5-10. После установки на экране появится длинная строка — идентификатор контейнера и ключ для администратора. Он-то нам и нужен:
 
-![image](https://github.com/user-attachments/assets/3d3a1445-9566-46cd-b1ca-d3bd65245a1e)
+![image](https://github.com/user-attachments/assets/06d52897-f71b-4379-bfdf-5417892d61ad)
 
-На скриншоте `c30d0d7da81f77f8b0ae38ef82af1ae82d33f32ef3e8e5606c49440f5cea1fc7` — этот токен. Его необходимо держать в секрете, я показываю для примера.
+На скриншоте `FlcTTMyfhoFvb1Ul4vIRmHITYXM1vJPZQ5C7FVn1` — этот токен. Его необходимо держать в секрете, я показываю для примера.
 
 Далее установите клиент тимспика и подключитесь к своему серверу. У вашего сервера есть IP-адрес, его и вводите в поле для подключения:
 
@@ -36,8 +36,7 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 Пароль не вводите, нажимайте подключиться
 После подключения сервер спросит у вас токен администратора. Скопируйте его из консоли и вставьте сюда:
 
-![image](https://github.com/user-attachments/assets/0fb6148a-fb03-440b-8f90-6ef8bbba244c)
-
+![image](https://github.com/user-attachments/assets/3ea264e3-9496-494d-9c18-90486797bf16)
 
 Ваш сервер готов, а вы его администратор. Можете звать друзей, только установите пароль для начала.
 
