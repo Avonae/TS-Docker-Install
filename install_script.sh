@@ -1,7 +1,21 @@
 #!/bin/bash
 
-#тестовая строка
+# Выводим результат работы скрипта на экран
 set -x
+
+# Добавляем ключи докера
+sudo apt-get update
+sudo apt-get install ca-certificates 
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Добавляем пакеты докера:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 # Обновляем систему
 sudo apt update && apt upgrade -y
 # ставим докер
