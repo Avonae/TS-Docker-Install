@@ -1,2 +1,28 @@
-# Teamspeak-Docker-Install
-Installation script for teamspeak 3 with Docker
+# Скрипт для быстрой установки Team Speak
+Установщик всё сделает сам, нужен только доступ в интернет и пользователь с `sudo` правами. Для установки выполните команду:
+```
+sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh)"
+```
+
+Тим спик будет работать как [контейнер в докере]([url](https://ru.wikipedia.org/wiki/Docker), что позволит не замусоривать систему и удобно им управлять.
+
+
+# Полезные команды
+## Показать список запущенных контейнеров
+```
+sudo docker ps
+```
+Первый столбец — ID контейнера. Скопируйте его, если хотите работать конкретно с ним. ID обычно выглядит как набор символов, вроде `90b8831a4a2`
+
+## Перезапустить контейнер тим спика
+```
+sudo docker restart ID_контейнера 
+```
+З
+## Перезапустить все контейнеры
+```
+sudo docker restart $(docker ps -a -q)
+```
+
+
+
