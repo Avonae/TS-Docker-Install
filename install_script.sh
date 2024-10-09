@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Получаем IP-адрес сервера
+IP_ADDRESS=$(hostname -I | awk '{print $1}')
+
 # Добавляем ключи докера
 sudo apt-get install ca-certificates 
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -32,5 +35,7 @@ sleep 15
 ADMIN_TOKEN=$(grep -r "token=" /data/teamspeak/logs | awk -F'token=' '{print $2}')
 
 # Выводим токен администратора
-echo "TeamSpeak установлен и запущен."
+echo "------------------------------------------------------------------"
+echo "Сервер TeamSpeak установлен и запущен."
 echo "Ваш токен администратора: $ADMIN_TOKEN"
+echo "IP-адрес сервера для подключения: $IP_ADDRESS"
