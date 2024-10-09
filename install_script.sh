@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Обновляем систему
+sudo apt update && apt upgrade -y
+# ставим докер
+sudo apt install docker
+
 # Создаем папку для пользовательских данных
 mkdir -p /data/teamspeak
 # Назначаем владельцем папки бесправного пользователя
