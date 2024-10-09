@@ -25,3 +25,9 @@ chown -R 503:503 /data/teamspeak
 # Запускаем контейнер с тимсписком
 docker run -d --restart=always --name teamspeak -e PUID=503 -e PGID=503 -e TS3SERVER_GDPR_SAVE=false -e TS3SERVER_LICENSE=accept -p 9987:9987/udp -p 30033:30033 -p 10011:10011 -p 41144:41144 -v /data/teamspeak:/data mbentley/teamspeak
 
+# Ищем строку с ключом в логах
+ADMIN_TOKEN=$(grep -r "used privilege key" /data/teamspeak/logs | awk -F"'" '{print $4}')
+
+# Вывод токена администратора
+echo "TeamSpeak установлен и запущен."
+echo "Ваш токен администратора: $ADMIN_TOKEN"
