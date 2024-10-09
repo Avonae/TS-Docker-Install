@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#тестовая строка
 set -x
 # Обновляем систему
 sudo apt update && apt upgrade -y
