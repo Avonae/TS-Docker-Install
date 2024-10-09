@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 # Обновляем систему
 sudo apt update && apt upgrade -y
 # ставим докер
