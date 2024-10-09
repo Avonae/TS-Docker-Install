@@ -9,7 +9,7 @@
 - логин и пароль от root или пользователя с правами sudo. Инструкция рассчитана на этот вариант
 
 # Установка сервера
-Установщик всё сделает сам в 1 команду. Код скрипта находится тут же, [можете ознакомиться]([url](https://github.com/Avonae/TS-Docker-Install/blob/main/install_script.sh)).
+Установщик всё сделает сам в 1 команду. Код скрипта находится тут же, [можете ознакомиться](https://github.com/Avonae/TS-Docker-Install/blob/main/install_script.sh).
 
 Процесс установки довольно прост:
 1. Подключаетесь к серверу по SSH. Для этого открываете терминал и пишете: `ssh IP_адрес_вашего_сервера`
@@ -19,7 +19,7 @@
 sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh)"
 ```
 
-Тим спик будет работать как [контейнер в докере]([url](https://ru.wikipedia.org/wiki/Docker)), что позволит не замусоривать систему и удобно им управлять.
+Тим спик будет работать как [контейнер в докере](https://ru.wikipedia.org/wiki/Docker), что позволит не замусоривать систему и удобно им управлять.
 Установка займет минут 5. По завершению вы получите админ-токен, который пригодится для управления сервером:
 
 ![image](https://github.com/user-attachments/assets/3d3a1445-9566-46cd-b1ca-d3bd65245a1e)
