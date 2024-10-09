@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Выводим результат работы скрипта на экран
-set -x
-
 # Добавляем ключи докера
 sudo apt-get install ca-certificates 
 sudo install -m 0755 -d /etc/apt/keyrings
