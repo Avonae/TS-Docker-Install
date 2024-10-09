@@ -9,11 +9,6 @@ sudo apt install docker -y
 mkdir -p /data/teamspeak
 # Назначаем владельцем папки бесправного пользователя
 chown -R 503:503 /data/teamspeak
-# Открываем нужные порты в системе
-sudo ufw allow 9987/udp
-sudo ufw allow 30033/tcp
-sudo ufw allow 10011/tcp
-sudo ufw allow 41144/tcp
 
 # Запускаем контейнер с тимсписком
 docker run -d --restart=always --name teamspeak -e PUID=503 -e PGID=503 -e TS3SERVER_GDPR_SAVE=false -e TS3SERVER_LICENSE=accept -p 9987:9987/udp -p 30033:30033 -p 10011:10011 -p 41144:41144 -v /data/teamspeak:/data mbentley/teamspeak
