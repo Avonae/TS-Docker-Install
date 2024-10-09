@@ -27,9 +27,3 @@ docker run -d --restart=always --name teamspeak -e PUID=503 -e PGID=503 -e TS3SE
   
 # Ждем запуска контейнера и получаем токен администратора
 echo "Ожидание запуска TeamSpeak сервера..."
-sleep 10
-ADMIN_TOKEN=$(sudo docker logs teamspeak 2>&1 | grep 'token=' | awk -F 'token=' '{print $2}')
-
-# Выводим токен от сервера
-echo "TeamSpeak установлен и запущен."
-echo "Ваш токен администратора: $ADMIN_TOKEN"
