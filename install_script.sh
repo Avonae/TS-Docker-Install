@@ -19,7 +19,7 @@ echo \
 # Обновляем систему
 sudo apt update && apt upgrade -y
 # ставим докер
-sudo apt install docker -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Создаем папку для пользовательских данных
 mkdir -p /data/teamspeak
