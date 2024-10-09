@@ -24,9 +24,11 @@
 sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh)"
 ```
 
-Установка займет минут 5-10. После установки на экране появится длинная строка — идентификатор контейнера и ключ для администратора. Он-то нам и нужен:
+Установка займет минут 5-10. После установки на экране появится длинная строка — это ключ администратора. Он-то нам и нужен:
 
-![image](https://github.com/user-attachments/assets/06d52897-f71b-4379-bfdf-5417892d61ad)
+![image](https://github.com/user-attachments/assets/2453b614-3528-46fa-969b-6ad8729ed836)
+
+Если IP-адрес сервера на экране не совпадает с тем, по которому вы подключались — используйте адрес подключения.
 
 На скриншоте `FlcTTMyfhoFvb1Ul4vIRmHITYXM1vJPZQ5C7FVn1` — этот токен. Его необходимо держать в секрете, я показываю для примера.
 
@@ -35,6 +37,7 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 ![image](https://github.com/user-attachments/assets/bb30250a-70db-4a2f-97e6-52dcb71b55a2)
 
 Пароль не вводите, нажимайте подключиться
+
 После подключения сервер спросит у вас токен администратора. Скопируйте его из консоли и вставьте сюда:
 
 ![image](https://github.com/user-attachments/assets/3ea264e3-9496-494d-9c18-90486797bf16)
