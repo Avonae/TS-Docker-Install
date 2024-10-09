@@ -3,7 +3,7 @@
 # Обновляем систему
 sudo apt update && apt upgrade -y
 # ставим докер
-sudo apt install docker
+sudo apt install docker -y
 
 # Создаем папку для пользовательских данных
 mkdir -p /data/teamspeak
