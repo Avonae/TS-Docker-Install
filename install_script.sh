@@ -4,7 +4,7 @@
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
 
 # Добавляем текущего юзера в переменную
-CURRENT_USER=${SUDO_USER:-$(whoami)}
+CURRENT_USER=$(awk -F: '$3 >= 1000 && $3 < 65534 {print $1; exit}' /etc/passwd)
 
 # Добавляем ключи докера
 sudo apt-get install ca-certificates 
