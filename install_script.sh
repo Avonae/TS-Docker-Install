@@ -3,9 +3,6 @@
 # Получаем IP-адрес сервера
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
 
-# Добавляем текущего юзера в переменную
-CURRENT_USER=$(awk -F: '$3 >= 1000 && $3 < 65534 {print $1; exit}' /etc/passwd)
-
 # Добавляем ключи докера
 sudo apt-get install ca-certificates 
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -22,12 +19,6 @@ echo \
 sudo apt update && apt upgrade -y
 # ставим докер
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-
-# Добавляем текущего пользователя в группу докера 
-sudo usermod -aG docker $CURRENT_USER
-
-# перезапускаем сессию 
-newgrp docker
 
 # Создаем папку для пользовательских данных
 mkdir -p /data/teamspeak
