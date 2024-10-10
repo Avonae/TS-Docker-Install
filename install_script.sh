@@ -3,6 +3,8 @@
 # Получаем IP-адрес сервера
 IP_ADDRESS=$(hostname -I | awk '{print $1}')
 
+# Добавляем текущего юзера в переменную
+CURRENT_USER=$USER
 # Добавляем ключи докера
 sudo apt-get install ca-certificates 
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -21,7 +23,7 @@ sudo apt update && apt upgrade -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Добавляем текущего пользователя в группу докера 
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $CURRENT_USER
 
 # перезапускаем сессию 
 newgrp docker
