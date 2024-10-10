@@ -86,3 +86,5 @@ docker rm ID_контейнера
 # Дополнительная информация
 Если хотите управлять контейнерами, не заходя на сервер, а через удобный веб интерфейс, рассмотрите установку Portainer. Хорошая инструкция на русском [есть по ссылке](https://timeweb.cloud/tutorials/docker/ustanovka-i-ispolzovanie-portainer).
 
+# Credits
+В скрипте используется образ тимспика из репозитория [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
