@@ -20,6 +20,12 @@ sudo apt update && apt upgrade -y
 # ставим докер
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
+# Добавляем текущего пользователя в группу докера 
+sudo usermod -aG docker $USER
+
+# перезапускаем сессию 
+newgrp docker
+
 # Создаем папку для пользовательских данных
 mkdir -p /data/teamspeak
 # Назначаем владельцем папки бесправного пользователя
