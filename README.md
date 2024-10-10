@@ -69,6 +69,7 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 ```
 sudo usermod -aG docker $USER
 ```
+В инструкциях ниже докер запускается не от рута.
 ## Показать список запущенных контейнеров
 ```
 docker ps
