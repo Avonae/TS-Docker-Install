@@ -66,18 +66,22 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 # Полезные команды
 ## Показать список запущенных контейнеров
 ```
-sudo docker ps
+docker ps
 ```
 Первый столбец — ID контейнера. Скопируйте его, если хотите работать конкретно с ним. ID обычно выглядит как набор символов, вроде `90b8831a4a2`
 
 ## Перезапустить контейнер тим спика
 ```
-sudo docker restart ID_контейнера 
+docker restart ID_контейнера 
 ```
 Здесь необходимо использовать ID контейнера, который вы получили с помощью `docker ps`.
 ## Перезапустить все контейнеры
 ```
-sudo docker restart $(docker ps -a -q)
+docker restart $(docker ps -a -q)
+```
+## Удалить контейнер
+```
+docker rm ID_контейнера 
 ```
 # Дополнительная информация
 Если хотите управлять контейнерами, не заходя на сервер, а через удобный веб интерфейс, рассмотрите установку Portainer. Хорошая инструкция на русском [есть по ссылке](https://timeweb.cloud/tutorials/docker/ustanovka-i-ispolzovanie-portainer).
