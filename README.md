@@ -86,9 +86,16 @@ docker restart ID_контейнера
 docker restart $(docker ps -a -q)
 ```
 ## Удалить контейнер
+Сначала делаем `docker ps`
+![image](https://github.com/user-attachments/assets/2054f8d3-5f80-4c6f-9c26-1a98efc68698)
+потом 
 ```
 docker rm ID_контейнера 
 ```
+![image](https://github.com/user-attachments/assets/03fa3a65-73cd-4bd4-adba-d93ff6a0aaca)
+
+Контейнер удален.
+
 # Дополнительная информация
 Если хотите управлять контейнерами, не заходя на сервер, а через удобный веб интерфейс, рассмотрите установку Portainer. Хорошая инструкция на русском [есть по ссылке](https://timeweb.cloud/tutorials/docker/ustanovka-i-ispolzovanie-portainer).
 
