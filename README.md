@@ -1,4 +1,4 @@
-# Свой сервер тимспика за 10 минут или замена дискорду без ВПН
+# Creating your own TeamSpeak server 
 
 Discord has been blocked in Russia. The legends didn’t lie... I didn’t like it before, and I definitely don’t want to use it through a VPN. So, I decided to set up my own TeamSpeak server and try to bring back the spirit of the 2000s.
 Along the way, I created a script that installs a TeamSpeak server in one command. I'm sharing it with you.
@@ -137,10 +137,6 @@ docker rm Container_ID
 ![image](https://github.com/user-attachments/assets/03fa3a65-73cd-4bd4-adba-d93ff6a0aaca)
 
 Container has been deleted
-
-### More info
-
-Если хотите управлять контейнерами, не заходя на сервер, а через удобный веб интерфейс, рассмотрите установку Portainer. Хорошая инструкция на русском [есть по ссылке](https://timeweb.cloud/tutorials/docker/ustanovka-i-ispolzovanie-portainer).
 
 # Credits
 
