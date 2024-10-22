@@ -1,103 +1,147 @@
 # Свой сервер тимспика за 10 минут или замена дискорду без ВПН
-Мне не нравится дискорд, так его еще и заблокировали в России. Эта инструкция поможет сделать свой сервер тим спика и болтать с друзьями в чудесном качестве. 
-Для сравнения: тим спик позволяет использовать звук 100 Кб/с, а дискорд бесплатным пользователям дает только 64 Кб/с.
 
-Для установки вам понадобится арендовать выделенный сервер — VPS. Обычно он стоит от 100р/месяц. Наберите в поиске "недорогие VPS" и вы все найдете. Лучше почитайте отзывы и выбирайте большие компании, а не слишком мелкие. Для наших целей ресурсов самого дешевого тарифа вполне вполне хватит.
-Сервер вы можете использовать не только для тимспика, а на крутить много всего. Если купить сервер за рубежом, можно его использовать как VPN.
+Discord has been blocked in Russia. The legends didn’t lie... I didn’t like it before, and I definitely don’t want to use it through a VPN. So, I decided to set up my own TeamSpeak server and try to bring back the spirit of the 2000s.
+Along the way, I created a script that installs a TeamSpeak server in one command. I'm sharing it with you.
 
-Тим спик будет работать как [контейнер в докере](https://ru.wikipedia.org/wiki/Docker), что позволит не замусоривать систему и удобно им управлять.
+# Why TeamSpeak?
 
-После оплаты вы получите следующие данные:
-- IP-адрес сервера для [подключения по SSH](https://firstvds.ru/technology/how-to-connect-to-the-server-via-ssh)
-- логин и пароль от root или пользователя с правами sudo. Инструкция рассчитана на этот вариант
+Here’s why I like my own TeamSpeak server:
 
-# Установка сервера
-Установщик всё сделает сам в 1 команду. Код скрипта находится тут же, [можете ознакомиться](https://github.com/Avonae/TS-Docker-Install/blob/main/install_script.sh).
+No need to mess with VPNs or other ways to bypass blocks.
+Better sound quality and lower ping to the server. TeamSpeak gives us audio at up to 100 Kb/s, while free Discord only offers 64 Kb/s.
+With your own server, you can do whatever you want and even set up multiple services.
+[A personal bonus for me] [Discord is laggy](https://windowsreport.com/discord-website-defaults-32-bit-app-how-to-download-64-bit/) and always has some sound issues, and only there, nowhere else. In short, I wouldn’t say TeamSpeak is a full replacement for Discord. It only has voice and text chats. You won’t find popular Discord servers or emojis here. But if communicating with friends is your main goal, this is the option for you.
 
-Процесс установки довольно прост:
-1. Подключитесь к серверу по SSH. Для этого открываете терминал и пишете: `ssh имя_пользователя@IP_адрес_вашего_сервера`. Например, у меня пользователя зовут `alex`, поэтому я пишу `ssh alex@192.168.31.180`. У вас это может быть `root` или другой пользователь.
-2. Напишите `yes` для принятия сертификата
-![image](https://github.com/user-attachments/assets/b6d021d1-69c0-4710-8a4c-134b3a0372b8)
-3. Введите пароль пользователя. Учите, что введенные данные не показываются, поэтому я рекомендую просто вставить скопированный пароль, нажав правой кнопкой мыши в окне терминала
-4. Запустите код скрипта:
+# Setting Up the Server
+First, you’ll need to rent a [VPS](https://ru.wikipedia.org/wiki/VPS) (Virtual Private Server). It’s inexpensive — prices start at around 4$ a month. I recommend going for large companies with good reviews.
+You can use the server for other tasks like VPN later.
+
+## Installation
+We’ll be using [Docker](https://en.wikipedia.org/wiki/Docker_(software)), to avoid cluttering up the system. After purchasing the VPS, you will receive the server’s IP address and login credentials.
+Open a terminal (not CMD, but a proper terminal).
+
+![Open windows terminal](/assets/img/teamspeak/image0.png)
+
+Enter the command `ssh username@IP_address_your_server`, for example:
+
+```bash
+ssh alex@192.168.31.180
 ```
-sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh)"
+![Connect to the server](/assets/img/teamspeak/image1.png)
+
+Type `yes`, to accept the server’s certificate.
+
+![Accept the server's sertificate](/assets/img/teamspeak/image2.png)
+
+Enter the user password provided when you rented the VPS. Keep in mind that for security reasons, the entered characters won’t be displayed, so it’s easier to copy and paste it.
+
+Run the installation script:
+
+```bash
+sudo bash -c "$(curl -L [https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh](https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh))"
 ```
+The installation will take 5-10 minutes. Once completed, an admin token will appear on the screen, which we’ll need later.
 
-Установка займет минут 5-10. После установки на экране появится длинная строка — это ключ администратора. Он-то нам и нужен:
+![The server is ready](/assets/img/teamspeak/image3.png)
 
-![image](https://github.com/user-attachments/assets/2453b614-3528-46fa-969b-6ad8729ed836)
+The server is ready, you can connect now.
 
-Если IP-адрес сервера на экране не совпадает с тем, по которому вы подключались — используйте адрес подключения.
+## Connecting and Setting Up
+Install the [Teamspeak Client](https://teamspeak.com/en/downloads/). I like the old version 3, but you can also use the current version 5.
 
-На скриншоте `FlcTTMyfhoFvb1Ul4vIRmHITYXM1vJPZQ5C7FVn1` — этот токен. Его необходимо держать в секрете, я показываю для примера.
+To connect, enter the VPS IP address in the server address field. Leave the password field empty and set any nickname you like.
 
-Далее установите клиент тимспика и подключитесь к своему серверу. У вашего сервера есть IP-адрес, его и вводите в поле для подключения:
+![Enter the server address in Teamspeak Client](/assets/img/teamspeak/image4.png)
 
-![image](https://github.com/user-attachments/assets/bb30250a-70db-4a2f-97e6-52dcb71b55a2)
+On your first connection, you’ll be asked for the admin token. Copy it from the console and press OK:
 
-Пароль не вводите, нажимайте подключиться
+![Enter the admin token](/assets/img/teamspeak/image5.png)
 
-После подключения сервер спросит у вас токен администратора. Скопируйте его из консоли и вставьте сюда:
+Done! You are now the server admin.
 
-![image](https://github.com/user-attachments/assets/3ea264e3-9496-494d-9c18-90486797bf16)
+![Admin key applied succefully](/assets/img/teamspeak/image6.png)
 
-Нажмите ОК, ключ применится. 
+Everything is set up, but I recommend changing the server password. To do this, right-click on the server and select "Edit Virtual Server," then set a password.
 
-![image](https://github.com/user-attachments/assets/c0626691-d166-439c-baa8-0847e849098c)
+![Change the server passowrd](/assets/img/teamspeak/image7.png)
 
-Ну вот и всё! Ваш сервер готов, а вы его администратор. Можете звать друзей, только установите пароль для начала.
+I also suggest maxing out the sound quality. You can do this in the channel settings. Set it to 10 right away to feel the difference from Discord.
 
-# Настройка сервера
-Для настройки сервера, нажмите на него правой кнопкой мыши → Редактировать виртуальный сервер
+That’s it! The server is ready — you can invite your friends. If you have any questions, feel free to ask in the comments.
 
-В первую очередь задайте пароль для сервера.
+# FAQ
+## Why is your server’s IP local?
+In the guide, I used a virtual machine because I already have a working TeamSpeak server, and I don’t want to delete it.
 
-![image](https://github.com/user-attachments/assets/6416d247-8283-4310-a652-6491932cac83)
+## What exactly does your script do?
+You can find the script’s code with comments [in the repository.](https://github.com/Avonae/TS-Docker-Install). 
 
-Теперь для подключения к серверу будет нужно указывать этот пароль.
+## What else can you do on the server?
+You can add a domain and connect to the server using a nice URL, install [Portainer](https://www.portainer.io/),  and much more...
 
-## Настройка звука
-Качества звука настраивается непосредственно в каналах. Поэтому для настройки, нажмите правой кнопкой на канал и выберите **Редактировать канал**
+## How do I delete the server?
 
-![image](https://github.com/user-attachments/assets/93105d2e-711c-41f2-a2aa-d62a15f09237)
+First, list the active containers with the command `docker ps`
+![Output of "docker ps" command](/assets/img/teamspeak/image8.png)
 
-На вкладке **Звук** можно выкрутить качество на **10**. Значение по умолчанию — 6. Я лично делаю это в первую очередь, т.к. качество просто потрясающее. Не зря же вы делали свой сервер! 
-# Полезные команды
-## Запуск докера не из под рута
-Чтобы не писать `sudo` каждый раз, работая с докером, добавьте своего пользователя в группу `docker`:
+Then remove the container with the command `docker rm -f container_ID`, in my case:
+
+![Deleted container](/assets/img/teamspeak/image9.png)
+
+The container will be stopped and deleted. You can reinstall the server with the same script.
+
+# Useful commands
+
+## Running Docker without root
+
+To avoid using `sudo` every time you work with docker, add your user to the `docker` group:
+
 ```
 sudo usermod -aG docker $USER
 ```
-В инструкциях ниже докер запускается не от рута.
-## Показать список запущенных контейнеров
+
+In the instructions below, docker is not run from root.
+
+## Show the list of running containers
+
 ```
 docker ps
 ```
-Первый столбец — ID контейнера. Скопируйте его, если хотите работать конкретно с ним. ID обычно выглядит как набор символов, вроде `90b8831a4a2`
 
-## Перезапустить контейнер тим спика
+The first column is the ID of the container. Copy it if you want to work specifically with it. The ID usually looks like a set of characters, like `90b8831a4a2`.
+
+## Restart the TeamSpeak container
+
 ```
-docker restart ID_контейнера 
+docker restart Container_ID 
 ```
-Здесь необходимо использовать ID контейнера, который вы получили с помощью `docker ps`.
-## Перезапустить все контейнеры
+
+Here you need to use the container ID you got with `docker ps`.
+
+## Restart all containers
+
 ```
 docker restart $(docker ps -a -q)
 ```
-## Удалить контейнер
-Сначала делаем `docker ps`
+
+## Delete containers
+
+Start with `docker ps`
 ![image](https://github.com/user-attachments/assets/2054f8d3-5f80-4c6f-9c26-1a98efc68698)
-потом 
+потом
+
 ```
-docker rm ID_контейнера 
+docker rm Container_ID 
 ```
+
 ![image](https://github.com/user-attachments/assets/03fa3a65-73cd-4bd4-adba-d93ff6a0aaca)
 
-Контейнер удален.
+Container has been deleted
 
-# Дополнительная информация
+### More info
+
 Если хотите управлять контейнерами, не заходя на сервер, а через удобный веб интерфейс, рассмотрите установку Portainer. Хорошая инструкция на русском [есть по ссылке](https://timeweb.cloud/tutorials/docker/ustanovka-i-ispolzovanie-portainer).
 
 # Credits
-В скрипте используется образ тимспика из репозитория [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
+
+The script uses a TeamSpeak image from the repository [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
