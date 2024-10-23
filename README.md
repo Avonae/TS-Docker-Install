@@ -151,9 +151,3 @@ You can add a domain and connect to the server using a nice URL, install [Portai
 # Credits
 
 The script uses a TeamSpeak image from the repository [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
-
-Container has been deleted
-
-# Credits
-
-The script uses a TeamSpeak image from the repository [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
