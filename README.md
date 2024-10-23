@@ -72,28 +72,6 @@ I also suggest maxing out the sound quality. You can do this in the channel sett
 
 That’s it! The server is ready — you can invite your friends. If you have any questions, feel free to ask in issue.
 
-# FAQ
-## Why is your server’s IP local?
-In the guide, I used a virtual machine because I already have a working TeamSpeak server, and I don’t want to delete it.
-
-## What exactly does your script do?
-You can find the script’s code with comments [in the repository.](https://github.com/Avonae/TS-Docker-Install). 
-
-## What else can you do on the server?
-You can add a domain and connect to the server using a nice URL, install [Portainer](https://www.portainer.io/), and much more...
-
-## How do I delete the server?
-
-First, list the active containers with the command `docker ps`
-
-![Output of "docker ps" command](https://github.com/user-attachments/assets/2054f8d3-5f80-4c6f-9c26-1a98efc68698)
-
-Then remove the container with the command `docker rm -f container_ID`, in my case:
-
-![Deleted container](https://github.com/user-attachments/assets/03fa3a65-73cd-4bd4-adba-d93ff6a0aaca)
-
-The container will be stopped and deleted. You can reinstall the server with the same script.
-
 # Useful commands and FAQ
 
 ## Running Docker without root
