@@ -45,7 +45,7 @@ sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Insta
 ```
 The installation will take 5-10 minutes. Once completed, an admin token will appear on the screen, which we’ll need later.
 
-![The server is ready](https://github.com/user-attachments/assets/012bde43-ce26-4a0f-a7fe-2d16d43f6538)
+![The server is ready](https://github.com/user-attachments/assets/b6a937d2-d14e-4544-93ca-4f0530f0b226)
 
 The server is ready, you can connect now.
 
@@ -58,15 +58,15 @@ To connect, enter the VPS IP address in the server address field. Leave the pass
 
 On your first connection, you’ll be asked for the admin token. Copy it from the console and press OK:
 
-![Enter the admin token](/assets/img/teamspeak/image5.png)
+![Enter the admin token](https://github.com/user-attachments/assets/6da8fe40-5531-4549-b0bb-f120eb52f3b8)
 
 Done! You are now the server admin.
 
-![Admin key applied succefully](/assets/img/teamspeak/image6.png)
+![Admin key applied succefully](https://github.com/user-attachments/assets/b4400bbf-310a-498b-bef2-964e9226ae20)
 
 Everything is set up, but I recommend changing the server password. To do this, right-click on the server and select "Edit Virtual Server," then set a password.
 
-![Change the server passowrd](/assets/img/teamspeak/image7.png)
+![Change the server passoword](https://github.com/user-attachments/assets/10845523-256e-4828-9d8e-5cc018c7951a)
 
 I also suggest maxing out the sound quality. You can do this in the channel settings. Set it to 10 right away to feel the difference from Discord.
 
@@ -94,7 +94,7 @@ Then remove the container with the command `docker rm -f container_ID`, in my ca
 
 The container will be stopped and deleted. You can reinstall the server with the same script.
 
-# Useful commands
+# Useful commands and FAQ
 
 ## Running Docker without root
 
@@ -104,7 +104,7 @@ To avoid using `sudo` every time you work with docker, add your user to the `doc
 sudo usermod -aG docker $USER
 ```
 
-In the instructions below, docker is not run from root.
+In the instructions below, docker is runnig without root.
 
 ## Show the list of running containers
 
@@ -132,13 +132,25 @@ docker restart $(docker ps -a -q)
 
 Start with `docker ps`
 ![image](https://github.com/user-attachments/assets/2054f8d3-5f80-4c6f-9c26-1a98efc68698)
-then
+потом
 
 ```
 docker rm Container_ID 
 ```
 
 ![image](https://github.com/user-attachments/assets/03fa3a65-73cd-4bd4-adba-d93ff6a0aaca)
+
+Container has been deleted.
+
+## Why is your server’s IP local?
+In the guide, I used a virtual machine because I already have a working TeamSpeak server, and I don’t want to delete it.
+
+## What else can you do on the server?
+You can add a domain and connect to the server using a nice URL, install [Portainer](https://www.portainer.io/), and much more...
+
+# Credits
+
+The script uses a TeamSpeak image from the repository [mbentley/docker-teamspeak](https://github.com/mbentley/docker-teamspeak)
 
 Container has been deleted
 
