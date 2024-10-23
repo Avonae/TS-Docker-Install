@@ -40,7 +40,7 @@ Enter the user password provided when you rented the VPS. Keep in mind that for 
 Run the installation script:
 
 ```bash
-sudo bash -c "$(curl -L [https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh](https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh))"
+sudo bash -c "$(curl -L https://raw.githubusercontent.com/Avonae/TS-Docker-Install/refs/heads/main/install_script.sh)"
 ```
 The installation will take 5-10 minutes. Once completed, an admin token will appear on the screen, which we’ll need later.
 
